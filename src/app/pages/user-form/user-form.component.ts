@@ -24,12 +24,10 @@ export class UserFormComponent {
 
   sendData() {
     if (this.formUser.valid) {
-
       const dataUser: UserRequest = {
         name: this.formUser.get('name')!.value,
         email: this.formUser.get('email')!.value,
-      }
-      console.log('send data valid', dataUser)
+      };
 
       this.usersService.setUser(dataUser).subscribe(() => {
         Swal.fire({
@@ -42,7 +40,6 @@ export class UserFormComponent {
           }
         });
       });
-
     }
 
   }

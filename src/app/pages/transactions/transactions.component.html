@@ -7,7 +7,11 @@
     <img src="../../../assets/cuentas.png" class="mr-4">
     <div>
       <h3 class="text-lg font-medium"> Descripción: {{ transaction.description }}</h3>
-      <p class="text-sm font-semibold leading-6 text-indigo-600"> Monto: S/{{ transaction.amount }}</p>
+      <p class="text-sm font-semibold leading-6"> Monto:
+        <span [ngClass]="{'text-red-600': transaction.amount < 0, 'text-blue-600': transaction.amount > 0}">
+          S/{{transaction.amount }}
+        </span>
+      </p>
     </div>
   </a>
   } @empty {
