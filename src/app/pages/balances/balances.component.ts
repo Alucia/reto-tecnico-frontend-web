@@ -1,4 +1,4 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { BalanceService } from '../../shared/service/balance.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';

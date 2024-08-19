@@ -1,8 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { UserService } from '../../shared/service/user.service';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { switchMap } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,7 +13,6 @@ import { CommonModule } from '@angular/common';
 })
 export class UsersComponent {
 
-  private route = inject(ActivatedRoute);
   private usersService = inject(UserService);
 
   public users = toSignal(

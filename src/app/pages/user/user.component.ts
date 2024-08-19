@@ -1,15 +1,16 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { UserService } from '../../shared/service/user.service';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { BalancesComponent } from '../balances/balances.component';
+import { BackButtonComponent } from '../../shared/components/back-button/back-button.component';
 
 @Component({
   standalone: true,
   selector: 'app-user',
-  imports: [CommonModule, BalancesComponent, RouterModule],
+  imports: [CommonModule, BalancesComponent, RouterModule, BackButtonComponent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
 })

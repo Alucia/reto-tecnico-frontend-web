@@ -1,21 +1,16 @@
-<section class="mx-auto grid max-w-7xl gap-x-8 px-6 lg:px-8 xl:grid-cols-1">
-
+<app-back-button></app-back-button>
+<section class="p-6">
   <h2 class="font-light text-lg mb-2">Aquí puedes revisar los movimientos de tu cuenta: {{idAccount}}</h2>
-  @for (transaction of transactions(); track transaction.idTransaction) {
-    <a class="max-w-sm rounded overflow-hidden shadow-lg cursor-pointer">
-      <div class="px-2 py-2">
-        <h3
-          class="text-base font-semibold leading-7 tracking-tight text-gray-900"
-        >
-        Descripción: {{ transaction.description }}
-      </h3>
-      <p class="text-sm font-semibold leading-6 text-indigo-600">
-        Monto: S/{{ transaction.amount  }}
-      </p>
-      </div>
-    </a>
-  } @empty {
-    <h3>Espere por favor</h3>
-  }
 
+  @for (transaction of transactions(); track transaction.idTransaction) {
+  <a class="flex items-center p-4 bg-gray-50 rounded-lg shadow-md mb-4 max-w-md">
+    <img src="../../../assets/cuentas.png" class="mr-4">
+    <div>
+      <h3 class="text-lg font-medium"> Descripción: {{ transaction.description }}</h3>
+      <p class="text-sm font-semibold leading-6 text-indigo-600"> Monto: S/{{ transaction.amount }}</p>
+    </div>
+  </a>
+  } @empty {
+  <h3>Espere por favor</h3>
+  }
 </section>

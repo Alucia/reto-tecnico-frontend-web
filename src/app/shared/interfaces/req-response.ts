@@ -2,7 +2,10 @@ export interface UserResponse {
   idUser: number,
   name: string,
   email: string,
-  comida: string
+}
+export interface UserRequest {
+  name: string | null,
+  email: string | null,
 }
 
 export interface BalanceResponse {

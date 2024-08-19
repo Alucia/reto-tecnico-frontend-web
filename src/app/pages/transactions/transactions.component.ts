@@ -5,10 +5,11 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { TransactionService } from '../../shared/service/transaction.service';
 import { map } from 'rxjs';
 import { TransactionResponse } from '../../shared/interfaces/req-response';
+import { BackButtonComponent } from '../../shared/components/back-button/back-button.component';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, BackButtonComponent],
   selector: 'app-transactions',
   templateUrl: './transactions.component.html',
   styleUrl: './transactions.component.scss'
